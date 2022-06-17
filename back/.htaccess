@@ -1,0 +1,10 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+	Header set Access-Control-Allow-Headers "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization"
+	Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+	Header set Access-Control-Allow-Origin "*"
+	Header set Cross-Origin-Resource-Policy "cross-origin"
+</IfModule>
+
+RewriteEngine on
+RewriteRule ^([a-zA-Z0-9_\-/\.\+\@]+)$ index.php?__rute__=$1 [L,QSA]
